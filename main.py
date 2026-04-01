@@ -7,6 +7,7 @@ import os
 from collections import defaultdict, deque
 from time import monotonic, time
 
+from dotenv import load_dotenv
 from fastapi import FastAPI, Request, Query, Depends
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -22,11 +23,16 @@ from routers.endpoints import (
 )
 from services.permissions_service import PermissionsService
 
+# Load environment variables from .env file
+load_dotenv()
+
 # ─── CONFIG ──────────────────────────────────────────────────────────────────
 
 RATE_LIMIT     = int(os.getenv("RATE_LIMIT", "600"))
 WINDOW_SECONDS = int(os.getenv("WINDOW_SECONDS", "60"))
 REDIS_URL      = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+PORT           = int(os.getenv("PORT", "8001"))
+CORS_ORIGINS   = os.getenv("CORS_ORIGINS", "http://localhost:5174").split(",")
 
 # ─── APP ─────────────────────────────────────────────────────────────────────
 
@@ -34,7 +40,7 @@ app = FastAPI(title="Centre Pitch Analytics API", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5174"],
+    allow_origins=[o.strip() for o in CORS_ORIGINS],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -169,4 +175,4 @@ async def health():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=PORT, reload=True)
