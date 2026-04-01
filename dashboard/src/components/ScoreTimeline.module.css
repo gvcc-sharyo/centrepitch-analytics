@@ -1,0 +1,133 @@
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.hoverBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 22px;
+}
+
+.hoverHint {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.hoverPt {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.hoverWinner {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hoverScore {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.hoverEnding {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  background: var(--bg-raised);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+/* ── Sets ─────────────────────────────────────────────── */
+
+.sets {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.setBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Set header row */
+.setHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.setLabel {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.setDivider {
+  flex: 1;
+  height: 1px;
+  background: var(--bg-border);
+}
+
+.setScore {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.setScoreSep {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ── Circle row ───────────────────────────────────────── */
+
+.row {
+  display: flex;
+  gap: 3px;
+  width: 100%;
+}
+
+.circle {
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+  /* keep icon from being too large on wide screens */
+  max-width: 38px;
+}
+
+.circle svg {
+  width: 55%;
+  height: 55%;
+}
+
+.circle:hover,
+.circleHov {
+  transform: scale(1.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  z-index: 1;
+}

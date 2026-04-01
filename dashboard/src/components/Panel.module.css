@@ -1,0 +1,292 @@
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.header .title {
+  margin-bottom: 0;
+}
+
+.empty {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.dotA, .dotB {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotA { background: var(--accent-a); }
+.dotB { background: var(--accent-b); }
+
+.legendLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  margin-right: 8px;
+}
+
+/* Tooltip */
+.tooltip {
+  background: var(--bg-raised);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.tooltipTitle {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+
+.tooltipRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+/* Mini stats row */
+.statRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.miniStat { }
+
+.miniVal {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent-a);
+}
+
+.miniLabel {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Pressure panel */
+.pressureDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.pressureStats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.pressureStat {
+  text-align: left;
+}
+
+.pressureStat.right {
+  text-align: right;
+}
+
+.pressureVal {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.pressureLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+.pressurePct {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.pressureTotal {
+  text-align: center;
+}
+
+.pressureTotalVal {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.pressureTotalLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pressureBar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-raised);
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.pressurePointsList {
+  border-top: 1px solid var(--bg-border);
+  padding-top: 14px;
+}
+
+.pressureListTitle {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.pressurePoint {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--bg-raised);
+  font-size: 12px;
+}
+
+.ppNum {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 40px;
+}
+
+.ppScore {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent-a);
+}
+
+.ppEnding {
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+/* Turning points */
+.tpSubtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  margin-top: -10px;
+  font-style: italic;
+}
+
+.tpList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tpRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-raised);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+}
+
+.tpRank {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-muted);
+  min-width: 28px;
+}
+
+.tpInfo {
+  flex: 1;
+}
+
+.tpScore {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.tpEnding {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  margin-top: 2px;
+}
+
+.tpShift {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tpDirection {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.tpPct {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-warn);
+}

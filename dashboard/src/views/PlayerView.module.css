@@ -1,0 +1,829 @@
+.view { }
+
+/* ── Page header ─────────────────────────────────────────────────────────── */
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.playerBadge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent-a-dim);
+  border: 2px solid var(--accent-a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent-a);
+  flex-shrink: 0;
+}
+
+.playerName {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+
+.playerId {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── Section layout ──────────────────────────────────────────────────────── */
+
+.skeletons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.sectionHeader .sectionTitle {
+  margin-bottom: 0;
+}
+
+/* ── Tier 1: Snapshot bar ────────────────────────────────────────────────── */
+
+.snapshot {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--bg-border);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.snapItem {
+  background: var(--bg-surface);
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.snapVal {
+  font-family: var(--font-playfair);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.snapValSm {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.snapBadge {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.snapLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── Tier 2a: Win rate windows ───────────────────────────────────────────── */
+
+.rateCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.rateCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px 14px;
+}
+
+.rateVal {
+  font-family: var(--font-playfair);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.rateLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.rateBar {
+  height: 3px;
+  background: var(--bg-raised);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* ── Win rate window picker ──────────────────────────────────────────────── */
+
+.windowPicker {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.windowPickerRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.windowPickerLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.windowPickerSelect {
+  background: var(--bg-raised);
+  border: 1px solid var(--bg-border);
+  color: var(--text-secondary);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.windowPickerDates {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.windowPickerDate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.windowPickerDate span {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.windowPickerDate input {
+  background: var(--bg-raised);
+  border: 1px solid var(--bg-border);
+  color: var(--text-secondary);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.windowSummary {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.windowSummaryTop {
+  min-width: 0;
+}
+
+.windowSummaryTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.windowSummaryMeta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.windowSummaryVal {
+  font-family: var(--font-playfair);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent-a);
+  flex-shrink: 0;
+}
+
+/* ── Tier 2b: W/L history strip ──────────────────────────────────────────── */
+
+.historyStrip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+}
+
+.historyLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.historyDots {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+}
+
+.dotWin, .dotLoss {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  max-width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.dotWin {
+  background: var(--accent-a-dim);
+  color: var(--accent-a);
+  border: 1.5px solid var(--accent-a);
+}
+
+.dotLoss {
+  background: var(--accent-b-dim);
+  color: var(--accent-b);
+  border: 1.5px solid var(--accent-b);
+}
+
+.historyTally {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ── Tier 3: H2H table ───────────────────────────────────────────────────── */
+
+.h2hTable {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.h2hHeader {
+  display: grid;
+  grid-template-columns: 1fr 80px 60px 60px;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--bg-raised);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.h2hRow {
+  display: grid;
+  grid-template-columns: 1fr 80px 60px 60px;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--bg-border);
+  align-items: center;
+}
+
+.h2hOpp {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.h2hRecord {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.h2hSep {
+  color: var(--text-muted);
+  margin: 0 3px;
+}
+
+.h2hPct {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.winBadgeSm, .lossBadgeSm {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.winBadgeSm  { background: var(--accent-a-dim); color: var(--accent-a); border: 1px solid var(--accent-a); }
+.lossBadgeSm { background: var(--accent-b-dim); color: var(--accent-b); border: 1px solid var(--accent-b); }
+
+/* ── Tier 4: Shot win rates ───────────────────────────────────────────────── */
+
+.loadBtn {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent-a);
+  background: var(--accent-a-dim);
+  border: 1px solid var(--accent-a);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.loadBtn:hover {
+  background: var(--accent-a);
+  color: #000;
+}
+
+.shotSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shotRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shotName {
+  font-size: 12px;
+  color: var(--text-secondary);
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.shotBarWrap {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-raised);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.shotPct {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  width: 38px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Match history ───────────────────────────────────────────────────────── */
+
+.matchList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.matchRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.matchRow:hover {
+  border-color: var(--accent-a);
+  transform: translateX(4px);
+}
+
+.matchRow:hover .matchId  { color: var(--accent-a); }
+.matchRow:hover .matchCta { color: var(--accent-a); font-weight: 700; }
+
+.winBadge, .lossBadge {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 3px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.winBadge  { background: var(--accent-a-dim); color: var(--accent-a); border: 1px solid var(--accent-a); }
+.lossBadge { background: var(--accent-b-dim); color: var(--accent-b); border: 1px solid var(--accent-b); }
+
+.matchMain {
+  flex: 1;
+}
+
+.matchId {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  transition: color 0.15s;
+}
+
+.matchDate {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.matchScore {
+  font-family: var(--font-playfair);
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.scoreSep {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.matchCta {
+  font-size: 14px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color 0.15s, font-weight 0.15s;
+}
+
+/* ── Snapshot pressure item ──────────────────────────────────────────────── */
+
+.snapPressureTag {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  border-bottom: 2px solid;
+  padding-bottom: 2px;
+  display: inline-block;
+}
+
+.snapPressureDelta {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+/* ── Advanced: Pressure card ─────────────────────────────────────────────── */
+
+.pressureCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pressureCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pressureTagBig {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1.5px solid;
+  background: transparent;
+}
+
+.prBarWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prBarSideLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  width: 46px;
+}
+
+.prBarSideLabel:last-child {
+  text-align: right;
+}
+
+.prTrack {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-raised);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.prTrackCenter {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: var(--bg-border);
+  z-index: 1;
+}
+
+.prFill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 3px;
+  transition: width 0.7s;
+}
+
+.pressureExplain {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ── Advanced Analytics panel ────────────────────────────────────────────── */
+
+.advToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+}
+
+.advToggle:hover {
+  border-color: var(--accent-a);
+  background: var(--bg-raised);
+}
+
+.advChevron {
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.advChevronOpen {
+  transform: rotate(180deg);
+}
+
+.advPanel {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.advCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.advCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.advCardLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.advCardVal {
+  font-family: var(--font-playfair);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.advUnit {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.advMeterTrack {
+  height: 4px;
+  background: var(--bg-raised);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.advCardSub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Form breakdown inside advCard */
+.formRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.formWindow {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.formVal {
+  font-family: var(--font-playfair);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.formWindowLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.formArrow {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Shot win rates block */
+.advBlock {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+
+.advBlockTitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.advBlockSub {
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-left: 6px;
+}
+
+.advNote {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 4px 0;
+}
+
+/* ── Misc ────────────────────────────────────────────────────────────────── */
+
+.empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 16px 0;
+}
+
+.error {
+  color: #dc2626;
+  background: rgba(220,38,38,0.06);
+  border: 1px solid rgba(220,38,38,0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.noProfile {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 16px 0;
+}
