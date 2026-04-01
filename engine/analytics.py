@@ -92,7 +92,10 @@ class WinProbabilityModule(AnalyticsModule):
         Replace self._predict() with LightGBM model.pkl later —
         the interface stays identical.
         """
-        points = sorted(data["points"], key=lambda x: x["point_number"])
+        points = sorted(
+            data["points"],
+            key=lambda x: (x.get("set_number", 1), x["point_number"]),
+        )
         player_a = data["match_info"]["player_a_id"]
         TARGET = 21
         a, b = 0, 0

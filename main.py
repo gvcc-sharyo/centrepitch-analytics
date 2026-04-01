@@ -28,11 +28,12 @@ load_dotenv()
 
 # ─── CONFIG ──────────────────────────────────────────────────────────────────
 
-RATE_LIMIT     = int(os.getenv("RATE_LIMIT", "600"))
-WINDOW_SECONDS = int(os.getenv("WINDOW_SECONDS", "60"))
-REDIS_URL      = os.getenv("REDIS_URL", "redis://localhost:6379/0")
-PORT           = int(os.getenv("PORT", "8001"))
-CORS_ORIGINS   = os.getenv("CORS_ORIGINS", "http://localhost:5174").split(",")
+RATE_LIMIT      = int(os.getenv("RATE_LIMIT", "600"))
+WINDOW_SECONDS  = int(os.getenv("WINDOW_SECONDS", "60"))
+REDIS_URL       = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+PORT            = int(os.getenv("PORT", "8001"))
+CORS_ORIGINS    = os.getenv("CORS_ORIGINS", "http://localhost:5174").split(",")
+BACKEND_API_URL = os.getenv("BACKEND_API_URL", "http://localhost:8000")
 
 # ─── APP ─────────────────────────────────────────────────────────────────────
 

@@ -26,17 +26,15 @@ async def disconnect():
 
 
 async def _ensure_indexes(db: AsyncIOMotorDatabase):
-    """Idempotent — safe to run on every startup."""
+    """Idempotent — safe to run on every startup.
+
+    Note: analytics_matches collection is no longer used.
+    All match data is fetched from the CentrePitch backend API.
+    Only computed analytics results are cached locally.
+    """
     await db.analytics_players.create_index("name")
 
-    await db.analytics_matches.create_index("player_a_id")
-    await db.analytics_matches.create_index("player_b_id")
-    await db.analytics_matches.create_index("date")
-    await db.analytics_matches.create_index("centrepitch_event_id")
-    await db.analytics_matches.create_index("centrepitch_match_id")
-    await db.analytics_matches.create_index([("player_a_id", 1), ("date", -1)])
-    await db.analytics_matches.create_index([("player_b_id", 1), ("date", -1)])
-
+    # Match data comes from backend API — only cache analytics results
     await db.analytics_sets.create_index("match_id")
     await db.analytics_sets.create_index([("match_id", 1), ("set_number", 1)])
 
